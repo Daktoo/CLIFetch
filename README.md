@@ -7,6 +7,7 @@ CLIFetch is a modified version of fastfetch to work better with CLIs.
 1. Open terminal
 
 Skip to step 5 if fastfetch config is already generated
+
 3. Install `fastfetch` if needed
 4. Type `fastfetch --gen-config` to generate a configuration file and directory at `~/.config/fastfetch`
 
