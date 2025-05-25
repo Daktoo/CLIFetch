@@ -21,3 +21,14 @@ sleep 1
 # Fastfetch output
 fastfetch -c ~/.config/fastfetch/config-cli.jsonc
 
+# Exiting message
+sleep 0.2
+echo ' '
+echo '---------------------------------------------------------------'
+echo ' '
+echo -e 'Thanks for using \033[31mCLI\033[36mFetch!'
+echo ' '
+echo '---------------------------------------------------------------'
+echo ' '
+
+
