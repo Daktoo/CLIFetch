@@ -17,5 +17,6 @@ Skip to step 5 if fastfetch config is already generated
 4. Type `fastfetch --gen-config` to generate a configuration file and directory at `~/.config/fastfetch`
 
 5. Install `wget` if needed
-6. Type `wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/clifetch.sh` into your terminal. It will download the sh script.
-7. Run the sh script with `sh clifetch.sh`
+6. Type `wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/clifetch` into your terminal. It will download the sh script.
+7. Make `clifetch` executable with `chmod +x clifetch`
+8. Run `clifetch` with `./clifetch`
