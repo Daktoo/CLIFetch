@@ -3,6 +3,11 @@ Requires fastfetch to be installed and a fastfetch config generated.
 
 CLIFetch is a modified version of fastfetch to work better with CLIs.
 
+# Requirements
+1. Linux/Unix terminal
+2. `fastfetch`
+3. `wget`
+
 # Installation
 1. Open terminal
 
