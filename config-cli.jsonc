@@ -56,12 +56,12 @@
   },
   {
     "type": "terminalsize",
-    "key": " ├  TERMINAL SIZE ",
+    "key": " ├  TTY SIZE ",
     "keyColor": "blue",
   },
   {
     "type": "terminaltheme",
-    "key": " └  TERMINAL THEME ",
+    "key": " └  THEME ",
     "keyColor": "blue",
   },
   "break",
