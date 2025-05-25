@@ -56,12 +56,7 @@
   },
   {
     "type": "terminalsize",
-    "key": " ├  TTY SIZE ",
-    "keyColor": "blue",
-  },
-  {
-    "type": "terminaltheme",
-    "key": " └  THEME ",
+    "key": " └   TTY SIZE ",
     "keyColor": "blue",
   },
   "break",
