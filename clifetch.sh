@@ -1,6 +1,6 @@
 # Download config
 echo ' '
-echo 'Installing Config'
+echo 'Installing Config...'
 echo ' '
 sleep 1
 cd ~
@@ -12,6 +12,7 @@ echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
 echo -e '\033[0mWelcome to \033[36mFastFetch \033[0mfor \033[31mCLI\033[0m!'
+echo 'Created by Dakota7789 on Github - CEO of Dakto INC'
 echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
