@@ -56,7 +56,7 @@
   },
   {
     "type": "terminalsize",
-    "key": " └   TTY SIZE ",
+    "key": " └  TTY SIZE ",
     "keyColor": "blue",
   },
   "break",
