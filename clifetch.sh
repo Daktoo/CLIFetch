@@ -11,7 +11,7 @@ mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc
 echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
-echo -e '\033[0mWelcome to \033[36mFastFetch \033[0mfor \033[31mCLI\033[0m!'
+echo -e '\033[0mWelcome to \033[31mCLI\033[36mFetch\033[0m!'
 echo 'Created by Dakota7789 on Github - CEO of Dakto INC'
 echo ' '
 echo '---------------------------------------------------------------'
