@@ -11,7 +11,7 @@ echo '---------------------------------------------------------------'
 echo ' '
 sleep 1
 
-read -p "Would you like to install the latest config? [y/n] " prompt
+read -p "Would you like to install the latest config? [y/N] " prompt
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then	
     echo ' ' && echo 'Installing config...' && echo ' ' && cd ~ && wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc > /dev/null 2>&1 && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc > /dev/null 2>&1 || fastfetch --gen-config && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc || fastfetch -c ~/.config/fastfetch/config-cli.jsonc
