@@ -27,3 +27,5 @@ Once you have downloaded `clifetch` file, you can now choose to create a command
 2. Type `mv ~/clifetch ~/bin/clifetch` to move `clifetch` file to the 'bin' directory.
 3. To create the command for clifetch, type `export PATH=$PATH":$HOME/bin"`
 4. To test if the command works, you can now type `clifetch` into your terminal.
+
+Note: This method is very temporary, and you will have to type `export PATH=$PATH":$HOME/bin"` whenever you reopen the terminal.
