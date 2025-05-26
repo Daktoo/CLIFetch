@@ -28,6 +28,7 @@ echo '---------------------------------------------------------------'
 echo ' '
 sleep 1
 
+# Config installation
 read -p "Would you like to install the latest config? [Y/n] " prompt
 if [[ $prompt == "n" || $prompt == "N" || $prompt == "no" || $prompt == "No" ]]
 then	
@@ -40,6 +41,7 @@ else
 	exit
 fi
 
+# Exiting message
 sleep 0.2
 echo ' '
 echo '---------------------------------------------------------------'
