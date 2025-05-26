@@ -1,11 +1,28 @@
 #!/bin/bash
 
+# Color code variables
+red="\e[0;91m"
+blue="\e[0;94m"
+expand_bg="\e[K"
+blue_bg="\e[0;104m${expand_bg}"
+red_bg="\e[0;101m${expand_bg}"
+green_bg="\e[0;102m${expand_bg}"
+green="\e[0;92m"
+white="\e[0;97m"
+bold="\e[1m"
+uline="\e[4m"
+reset="\e[0m"
+cyan="\e[0;96m"
+red_bold="\e[1;91m"
+cyan_bold="\e[1;96m"
+white_bold="\e[1;37m"
+ 
 # Welcome message
 echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
-echo -e '\033[0mWelcome to \033[31mCLI\033[36mFetch\033[0m!'
-echo 'Created by Dakota7789 on GitHub'
+echo -e "${white_bold}Welcome to ${red}CLI${cyan}Fetch${white_bold}!${reset}"
+echo -e "${white_bold}Created by Dakota7789 on GitHub${reset}"
 echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
@@ -16,14 +33,14 @@ if [[ $prompt == "n" || $prompt == "N" || $prompt == "no" || $prompt == "No" ]]
 then	
     fastfetch -c ~/.config/fastfetch/config-cli.jsonc
 else
-    echo ' ' && echo '---------------------------------------------------------------' && echo ' ' && echo 'Installing config...' && echo ' ' && echo '---------------------------------------------------------------' && echo ' ' && cd ~ && wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc > /dev/null 2>&1 && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc > /dev/null 2>&1 || fastfetch --gen-config > /dev/null 2>&1 && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc > /dev/null 2>&1 || fastfetch -c ~/.config/fastfetch/config-cli.jsonc
+    echo ' ' && echo ' ' && echo 'Installing config...' && echo ' ' && echo ' ' && cd ~ && wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc > /dev/null 2>&1 && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc > /dev/null 2>&1 || fastfetch --gen-config > /dev/null 2>&1 && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc > /dev/null 2>&1 || fastfetch -c ~/.config/fastfetch/config-cli.jsonc
 fi
 
 sleep 0.2
 echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
-echo -e 'Thanks for using \033[31mCLI\033[36mFetch\033[0m!'
+echo -e "${white_bold}Thanks for using ${red}CLI${cyan}Fetch${white_bold}!${reset}"
 echo ' '
 echo '---------------------------------------------------------------'
 echo ' '
