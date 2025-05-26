@@ -5,8 +5,8 @@ echo 'Installing Config...'
 echo ' '
 sleep 1
 cd ~
-wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc
-mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc || fastfetch --gen-config && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc || mv ~/bin/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc
+wget https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc > /dev/null 2>&1
+mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc || fastfetch --gen-config && mv ~/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc || mv ~/bin/config-cli.jsonc ~/.config/fastfetch/config-cli.jsonc > /dev/null 2>&1
 
 # Welcome message
 echo ' '
