@@ -32,7 +32,9 @@ sleep 1
 read -p "Would you like to install the latest config? [Y/n] " prompt
 if [[ $prompt == "n" || $prompt == "N" || $prompt == "no" || $prompt == "No" ]]
 then	
-    echo ' ' && echo ' ' && fastfetch -c ~/.config/fastfetch/config-cli.jsonc
+    echo ' '
+    echo ' '
+    fastfetch -c ~/.config/fastfetch/config-cli.jsonc
 fi
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then
