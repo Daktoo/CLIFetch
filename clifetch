@@ -29,8 +29,8 @@ echo ' '
 sleep 1
 
 # CLI config installation
-read -p "Would you like to install the latest config for CLIs? [y/n] " prompt
-if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+read -p "Would you like to install the latest config for CLIs? [Y/n] " prompt
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" || $prompt == "" ]]
 then
     echo ' '
     echo ' '
@@ -58,8 +58,8 @@ else
 fi
 
 # DE/WM config installation
-read -p "Would you like to install and use the latest config for DE/WMs? (Kitty Terminal recommended) [y/n] " prompt
-if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+read -p "Would you like to install and use the latest config for DE/WMs? (Kitty Terminal recommended) [Y/n] " prompt
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" || $prompt == "" ]]
 then
 	echo ' '
 	echo ' '
