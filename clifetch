@@ -29,12 +29,12 @@ echo ' '
 sleep 1
 
 # CLI config installation
-read -p "Would you like to install the latest config for CLIs? [Y/n] " prompt
+read -p "$(echo -e $cyan_bold"|| "  $white_bold"Would you like to install the latest config for CLIs? [Y/n]" )" prompt INPUT_VARIABLE
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" || $prompt == "" ]]
 then
     echo ' '
     echo ' '
-    echo 'Installing config...' 
+    echo -e "${cyan_bold}|| ${reset}Installing config..." 
     echo ' ' 
     echo ' '
     cd ~ 
@@ -58,12 +58,12 @@ else
 fi
 
 # DE/WM config installation
-read -p "Would you like to install and use the latest config for DE/WMs? (Kitty Terminal recommended) [Y/n] " prompt
+read -p "$(echo -e $cyan_bold"|| " $white_bold"Would you like to install and use the latest config for DE/WMs? (Kitty Terminal recommended) [Y/n]" )" prompt INPUT_VARIABLE
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" || $prompt == "" ]]
 then
 	echo ' '
 	echo ' '
-	echo 'Installing config...'
+	echo -e "${cyan_bold}|| ${reset}Installing config..."
 	echo ' '
 	echo ' '
 	wget -qO ~/config-dewm.jsonc https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-dewm.jsonc || fastfetch --gen-config > /dev/null 2>&1 && mv ~/config-dewm.jsonc ~/.config/fastfetch/config-dewm.jsonc > /dev/null 2>&1
