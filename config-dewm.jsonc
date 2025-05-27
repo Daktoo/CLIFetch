@@ -15,7 +15,7 @@
 
 "modules": [
   "title",
-  "separator"
+  "separator",
   "break",
   {
     "type": "os",
