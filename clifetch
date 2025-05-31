@@ -22,7 +22,6 @@ install_config() {
 	local config_url=$1
 	local config_filename=$2
 	local config_path=$3
-	dialog --title "CLIFetch" --msgbox "Installing config..." 5 30
 	mkdir -p $(dirname $config_path)
 	wget -qO ~/$config_filename $config_url || fastfetch --gen-config > /dev/null 2>&1
 	mv ~/$config_filename $config_path > /dev/null 2>&1
@@ -38,6 +37,9 @@ install_config() {
 	echo ' '
 exit
 }
+
+# Dialog for welcome message
+dialog --title "CLIFetch" --msgbox "Welcome to CLIFetch Created by Daktoo on Github" 8 30
 
 # Dialog for CLI config
 dialog --title "CLIFetch" --yesno "Would you like to install and use the latest config for CLIs?" 0 0
