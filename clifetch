@@ -21,19 +21,13 @@ install_config() {
 	local config_url=$1
 	local config_filename=$2
 	local config_path=$3
-
 	dialog --title "CLIFetch" --msgbox "Installing config..." 5 30
-
 	mkdir -p $(dirname $config_path)
-
 	wget -qO ~/$config_filename $config_url || fastfetch --gen-config > /dev/null 2>&1
-
 	mv ~/$config_filename $config_path > /dev/null 2>&1
-
 	sleep 2 && clear && sleep 0.1
 	fastfetch -c $config_path
 	sleep 0.2
-
 	echo ' '
 	echo '---------------------------------------------------------------'
 	echo ' '
@@ -48,10 +42,8 @@ dialog --title "CLIFetch" --yesno "Would you like to install and use the latest 
 if [ $? -eq 0 ]; then
 	install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc" "config-cli.jsonc" "~/.config/fastfetch/config-cli.jsonc"
 fi
-
 dialog --title "CLIFetch" --yesno "Would you like to install and use the latest config for DE/WMs?" 0 0
 if [ $? -eq 0 ]; then
 	install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-dewm.jsonc" "config-dewm.jsonc" "~/.config/fastfetch/config-dewm.jsonc"
 fi
-
 exit 0
