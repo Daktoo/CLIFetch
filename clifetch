@@ -17,8 +17,10 @@ red_bold="\e[1;91m"
 cyan_bold="\e[1;96m"
 white_bold="\e[1;37m"
 
-# Check for dialog and install it if needed
-dialog --version > /dev/null 2>&1 || sudo su && pacman -S dialog || apt install dialog || dnf install dialog || emerge -S dialog || pkg install dialog || echo 'Failed to install dialog. Please install dialog manually.' && exit 1
+# Check for wget
+wget --version > /dev/null 2>&1 || echo 'Wget is not installed on your system. Plesae install Wget'
+# Check for dialog
+dialog --version > /dev/null 2>&1 || echo 'Dialog is not installed on your system. Please install Dialog.'
 
 # Install config base
 install_config() {
