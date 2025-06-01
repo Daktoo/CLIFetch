@@ -17,8 +17,10 @@ red_bold="\e[1;91m"
 cyan_bold="\e[1;96m"
 white_bold="\e[1;37m"
 
+# Check for fastfetch
+fastfetch --version > /dev/null 2>&1 || echo 'Fastfetch is not installed on your system. Please install Fastfetch.'
 # Check for wget
-wget --version > /dev/null 2>&1 || echo 'Wget is not installed on your system. Plesae install Wget'
+wget --version > /dev/null 2>&1 || echo 'Wget is not installed on your system. Plesae install Wget.'
 # Check for dialog
 dialog --version > /dev/null 2>&1 || echo 'Dialog is not installed on your system. Please install Dialog.'
 
