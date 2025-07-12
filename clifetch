@@ -17,46 +17,52 @@ red_bold="\e[1;91m"
 cyan_bold="\e[1;96m"
 white_bold="\e[1;37m"
 
-# Check for fastfetch
-fastfetch --version > /dev/null 2>&1 || echo 'Fastfetch is not installed on your system. Please install Fastfetch.'
-# Check for wget
-wget --version > /dev/null 2>&1 || echo 'Wget is not installed on your system. Plesae install Wget.'
-# Check for dialog
-dialog --version > /dev/null 2>&1 || echo 'Dialog is not installed on your system. Please install Dialog.'
+# Dependency check function
+require() {
+    command -v "$1" > /dev/null 2>&1 || {
+        echo "$2 is not installed on your system. Please install $2."
+        exit 1
+    }
+}
+
+require fastfetch "Fastfetch"
+require wget "Wget"
+require dialog "Dialog"
 
 # Install config base
 install_config() {
-	local config_url=$1
-	local config_filename=$2
-	local config_path=$3
-	mkdir -p $(dirname $config_path)
-	wget -qO ~/$config_filename $config_url || fastfetch --gen-config > /dev/null 2>&1
-	mv ~/$config_filename $config_path > /dev/null 2>&1
-	sleep 2 && clear && sleep 0.1
-	fastfetch -c $config_path
-	sleep 0.2
-	echo ' '
-	echo '---------------------------------------------------------------'
-	echo ' '
-	echo -e "${white_bold}Thanks for using ${red}CLI${cyan}Fetch${white_bold}!${reset}"
-	echo ' '
-	echo '---------------------------------------------------------------'
-	echo ' '
-exit
+    local config_url="$1"
+    local config_filename="$2"
+    local config_path="$3"
+    mkdir -p "$(dirname "$config_path")"
+    if wget -qO "$HOME/$config_filename" "$config_url"; then
+        mv "$HOME/$config_filename" "$config_path"
+    else
+        fastfetch --gen-config > /dev/null 2>&1
+    fi
+    clear
+    fastfetch -c "$config_path"
+    echo
+    echo '---------------------------------------------------------------'
+    echo
+    echo -e "${white_bold}Thanks for using ${red}CLI${cyan}Fetch${white_bold}!${reset}"
+    echo
+    echo '---------------------------------------------------------------'
+    echo
+    exit 0
 }
 
 # Dialog for welcome message
 dialog --title "CLIFetch" --msgbox "Welcome to CLIFetch Created by Daktoo on Github" 8 30
 
-# Dialog for CLI config
 dialog --title "CLIFetch" --yesno "Would you like to install and use the latest config for CLIs?" 0 0
 if [ $? -eq 0 ]; then
-	install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc" "config-cli.jsonc" "~/.config/fastfetch/config-cli.jsonc"
+    install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc" "config-cli.jsonc" "$HOME/.config/fastfetch/config-cli.jsonc"
 fi
 
-# Dialog for DE/WM config
 dialog --title "CLIFetch" --yesno "Would you like to install and use the latest config for DE/WMs?" 0 0
 if [ $? -eq 0 ]; then
-	install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-dewm.jsonc" "config-dewm.jsonc" "~/.config/fastfetch/config-dewm.jsonc"
+    install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-dewm.jsonc" "config-dewm.jsonc" "$HOME/.config/fastfetch/config-dewm.jsonc"
 fi
-exit 1
+
+exit 0
