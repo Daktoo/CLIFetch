@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Color code variables
 red="\e[0;91m"
 blue="\e[0;94m"
 expand_bg="\e[K"
@@ -16,8 +15,6 @@ cyan="\e[0;96m"
 red_bold="\e[1;91m"
 cyan_bold="\e[1;96m"
 white_bold="\e[1;37m"
-
-# Dependency check and install function
 require() {
     if ! command -v "$1" > /dev/null 2>&1; then
         echo "$2 is not installed. Attempting to install..."
@@ -49,12 +46,9 @@ require() {
         fi
     fi
 }
-
 require fastfetch "Fastfetch"
 require wget "Wget"
 require dialog "Dialog"
-
-# Install config base
 install_config() {
     local config_url="$1"
     local config_filename="$2"
@@ -77,18 +71,13 @@ install_config() {
     echo
     exit 0
 }
-
-# Dialog for welcome message
 dialog --title "CLIFetch" --msgbox "Welcome to CLIFetch Created by Daktoo on Github" 8 30
-
 dialog --title "CLIFetch" --yesno "Would you like to install and use the latest config for CLIs?" 0 0
 if [ $? -eq 0 ]; then
     install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-cli.jsonc" "config-cli.jsonc" "$HOME/.config/fastfetch/config-cli.jsonc"
 fi
-
 dialog --title "CLIFetch" --yesno "Would you like to install and use the latest config for DE/WMs?" 0 0
 if [ $? -eq 0 ]; then
     install_config "https://raw.githubusercontent.com/Dakota7789/CLIFetch/refs/heads/main/config-dewm.jsonc" "config-dewm.jsonc" "$HOME/.config/fastfetch/config-dewm.jsonc"
 fi
-
 exit 0
